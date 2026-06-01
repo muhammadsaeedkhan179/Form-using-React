@@ -1,0 +1,20 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f0d4be9a;
+}
+
+.content h1{
+    font-size: 50px;
+    font-weight: 600;
+    
+}
+
+.content p{
+    font-size: 18px;
+    font-weight: 400;
+}
