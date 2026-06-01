@@ -1,29 +1,115 @@
+/* Navbar Wrapper */
 .navbarWrapper {
-    background-color: #f0cf92;
-    width: 100%;  /* spans full width */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Navbar Container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+.logo:hover {
+  transform: scale(1.05);
 }
 
-.navbar .logo img {
-    width: 50px;
-    height: 50px;
+.logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Navigation List */
+.navbarUl {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links */
+.navbarUl li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbarUl li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navbarUl li a:hover::after {
+  width: 100%;
+}
+
+.navbarUl li a:hover {
+  color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbarUl {
+    gap: 15px;
+  }
+
+  .navbarUl li a {
+    font-size: 14px;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbarUl {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .navbarUl li a {
+    font-size: 12px;
+  }
+
+  .logo img {
+    width: 35px;
+    height: 35px;
+  }
 }
